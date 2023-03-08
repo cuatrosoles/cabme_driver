@@ -19,16 +19,16 @@ import 'package:video_thumbnail/video_thumbnail.dart';
 import 'show_toast_dialog.dart';
 
 class Constant {
-  static String kGoogleApiKey = "Place your key";
-  static String rideOtp = "yes";
-  static String appVersion = "0.0";
+  static String kGoogleApiKey = "AIzaSyBwKgjsCUvstJD_8KuJfqa68-q6gOIA280";
+  static String distanceUnit = "KM";
+  static String appVersion = "1.0";
   static int decimal = 2;
   static int taxValue = 0;
   static String currency = "\$";
   static String taxType = 'Percentage';
   static String taxName = 'Tax';
-  static String distanceUnit = "KM";
-  static String contactUsEmail = "", contactUsAddress = "", contactUsPhone = "";
+  static String contactUsEmail = "info@navi.enterprises", contactUsAddress = "San Jose - Costa Rica", contactUsPhone = "(506)76654210";
+  static String rideOtp = "yes";
 
   static CollectionReference conversation = FirebaseFirestore.instance.collection('conversation');
   static CollectionReference locationUpdate = FirebaseFirestore.instance.collection('ride_location_update');

@@ -4,6 +4,7 @@ import 'dart:convert';
 import 'dart:io';
 
 import 'package:cabme_driver/controller/settings_controller.dart';
+import 'package:cabme_driver/firebase_options.dart';
 import 'package:cabme_driver/on_boarding_screen.dart';
 import 'package:cabme_driver/page/auth_screens/login_screen.dart';
 import 'package:cabme_driver/page/dash_board.dart';
@@ -15,7 +16,7 @@ import 'package:flutter_local_notifications/flutter_local_notifications.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:cabme_driver/service/api.dart';
-import 'page/localization_screens/localization_screen.dart';
+///import 'page/localization_screens/localization_screen.dart';
 import 'service/localization_service.dart';
 import 'themes/constant_colors.dart';
 import 'utils/Preferences.dart';
@@ -26,10 +27,18 @@ Future<void> _firebaseMessagingBackgroundHandler(RemoteMessage message) async {
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
-
   await Preferences.initPref();
 
-  await Firebase.initializeApp();
+  if (Firebase.apps.isNotEmpty) {
+    await Firebase.initializeApp(
+      options: DefaultFirebaseOptions.currentPlatform,
+      );
+   } else {
+    WidgetsFlutterBinding.ensureInitialized();
+    await Firebase.initializeApp();
+    runApp(const MyApp());
+   }
+   
   await FirebaseMessaging.instance.setForegroundNotificationPresentationOptions(
     alert: true,
     badge: true,
@@ -137,7 +146,7 @@ class MyApp extends StatelessWidget {
               return Preferences.getString(Preferences.languageCodeKey)
                       .toString()
                       .isEmpty
-                  ? const LocalizationScreens(intentType: "main")
+                  ? const OnBoardingScreen() ////const LocalizationScreens(intentType: "main")
                   : Preferences.getBoolean(Preferences.isFinishOnBoardingKey)
                       ? Preferences.getBoolean(Preferences.isLogin)
                           ? DashBoard()
