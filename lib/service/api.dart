@@ -3,7 +3,7 @@ import 'dart:io';
 import 'package:cabme_driver/utils/Preferences.dart';
 
 class API {
-  static const baseUrl = "https://cabme.siswebapp.com/api/v1/"; // live
+  static const baseUrl = "https://navi.enterprises/api/v1/"; // live
   static const apiKey = "base64:9wMwQDEBjAK5OVvehRlQhF5PE1dNk6xK3RRIUkcDyGA=";
 
   static Map<String, String> authheader = {

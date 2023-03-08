@@ -4,16 +4,6 @@ import 'package:firebase_core/firebase_core.dart' show FirebaseOptions;
 import 'package:flutter/foundation.dart'
     show defaultTargetPlatform, kIsWeb, TargetPlatform;
 
-/// Default [FirebaseOptions] for use with your Firebase apps.
-///
-/// Example:
-/// ```dart
-/// import 'firebase_options.dart';
-/// // ...
-/// await Firebase.initializeApp(
-///   options: DefaultFirebaseOptions.currentPlatform,
-/// );
-/// ```
 class DefaultFirebaseOptions {
   static FirebaseOptions get currentPlatform {
     if (kIsWeb) {
@@ -47,21 +37,21 @@ class DefaultFirebaseOptions {
   }
 
   static const FirebaseOptions web = FirebaseOptions(
-    apiKey: 'Place your key',
-    appId: 'Place your key',
-    messagingSenderId: 'Place your key',
-    projectId: 'Place your key',
-    authDomain: 'Place your key',
-    storageBucket: 'Place your key',
-    measurementId: 'Place your key',
+    apiKey: 'AIzaSyAF3qF6AfiNkEJyeb3r9Hpeu9HtxyrKvFs',
+    appId: '1:808104424678:web:77fa9412bd72e794893727',
+    messagingSenderId: '808104424678',
+    projectId: 'navitres-f8e83',
+    authDomain: 'navitres-f8e83.firebaseapp.com',
+    storageBucket: 'navitres-f8e83.appspot.com',
+    measurementId: 'G-PC1SX8ZGHH',
   );
 
   static const FirebaseOptions android = FirebaseOptions(
-    apiKey: 'Place your key',
-    appId: 'Place your key',
-    messagingSenderId: 'Place your key',
-    projectId: 'Place your key',
-    storageBucket: 'Place your key',
+    apiKey: 'AIzaSyBwKgjsCUvstJD_8KuJfqa68-q6gOIA280',
+    appId: '1:808104424678:android:62b10baee5fbcbe9893727',
+    messagingSenderId: '808104424678',
+    projectId: 'navitres-f8e83',
+    storageBucket: 'navitres-f8e83.appspot.com',
   );
 
   static const FirebaseOptions ios = FirebaseOptions(
