@@ -119,6 +119,7 @@ class Constant {
     });
     uploadTask.whenComplete(() {}).catchError((onError) {
       ShowToastDialog.closeLoader();
+      return (onError);
     });
     var storageRef = (await uploadTask.whenComplete(() {})).ref;
     var downloadUrl = await storageRef.getDownloadURL();

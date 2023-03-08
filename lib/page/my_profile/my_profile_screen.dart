@@ -138,11 +138,11 @@ class MyProfileScreen extends StatelessWidget {
                       child: Column(
                         mainAxisAlignment: MainAxisAlignment.start,
                         children: [
-                          Padding(
-                            padding: const EdgeInsets.symmetric(horizontal: 4.0, vertical: 5),
+                          const Padding(
+                            padding: EdgeInsets.symmetric(horizontal: 4.0, vertical: 5),
                             child: Row(
                               mainAxisAlignment: MainAxisAlignment.start,
-                              children: const [
+                              children: [
                                 Text(
                                   "Personal Information",
                                   style: TextStyle(fontSize: 17, fontWeight: FontWeight.bold),
@@ -266,11 +266,11 @@ class MyProfileScreen extends StatelessWidget {
                           ),
 
                           /// For Vehicle Information
-                          Padding(
-                            padding: const EdgeInsets.symmetric(horizontal: 4.0, vertical: 5),
+                          const Padding(
+                            padding: EdgeInsets.symmetric(horizontal: 4.0, vertical: 5),
                             child: Row(
                               mainAxisAlignment: MainAxisAlignment.start,
-                              children: const [
+                              children: [
                                 Text(
                                   "Vehicle Information",
                                   style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
